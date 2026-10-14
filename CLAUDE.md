@@ -1,0 +1,17 @@
+# Working rules
+- I am a complete beginner. Explain everything in simple, non-technical words. Avoid jargon, and if you must use a technical word, explain it in one sentence.
+- Work on ONE step at a time. Never build features I haven't asked for in the current message.
+- Before writing code for any step, tell me your plan in 5 to 7 simple bullets and wait for me to say "go".
+- When a step is done, STOP. Tell me what you changed, exactly what I should see on screen to check it works, and wait for my next instruction.
+- Do not add placeholder code for future features.
+- Never push to main and never switch to main. Do not merge branches yourself. I merge pull requests myself on GitHub. If I ask you to do something on main, treat it as a single action, then return to your working branch and tell me which branch you are on. 
+- Before every commit and push, state which branch you are on. If it is main, stop and ask me.
+
+# Project
+A Pomodoro timer website. A painting from the Met Museum starts blurred and gets clearer as the timer runs. When the timer hits zero, the painting is fully sharp and the page shows the painter, the year, and a link to the Met Museum's page for that painting.
+
+# Requirements that always apply
+- The user can set the timer length themselves on the page (minutes and seconds). The default is 25 minutes.
+- Pausing keeps the same painting. Resetting loads a new painting.
+- The painting details must never appear before the timer finishes.
+- The timer must stay accurate when the browser tab is in the background.
