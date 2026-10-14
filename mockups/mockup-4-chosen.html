@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mockup 4 – Chosen Design</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #2a2a2a;
+      padding: 32px 16px 48px;
+    }
+
+    .page-label {
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 6px;
+    }
+    .page-name {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 700;
+      color: #eee;
+      margin-bottom: 36px;
+    }
+
+    /* ── Two views side by side ── */
+    .views {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .view {
+      flex: 1;
+      min-width: 300px;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .view-label {
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #666;
+    }
+
+    /* ── App frame ── */
+    .app {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.6);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Painting area ── */
+    .painting-area {
+      background: #000;
+      flex: 1;
+      min-height: 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .painting-area img {
+      width: 100%;
+      height: 340px;
+      object-fit: contain;
+      display: block;
+    }
+    .painting-area img.blurred {
+      filter: blur(22px);
+      transform: scale(1.1);
+    }
+
+    /* ── Bottom bar ── */
+    .bar {
+      background: #faf8f4;
+      border-top: 2.5px solid #E8735A;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 80px;
+    }
+
+    /* Timer state */
+    .timer-display {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .timer-number {
+      font-size: 28px;
+      font-weight: 600;
+      color: #1a1a1a;
+      letter-spacing: -0.01em;
+      font-variant-numeric: tabular-nums;
+    }
+    .pencil {
+      font-size: 14px;
+      color: #bbb;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    /* Reveal state */
+    .reveal-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .reveal-title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #1a1a1a;
+      line-height: 1.3;
+    }
+    .reveal-meta {
+      font-size: 12px;
+      color: #888;
+    }
+    .reveal-link {
+      font-size: 12px;
+      color: #888;
+      text-decoration: none;
+      margin-top: 4px;
+      display: inline-block;
+    }
+    .reveal-link:hover { color: #E8735A; }
+
+    /* Buttons */
+    .btn {
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: default;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .btn-primary {
+      background: #1a1a1a;
+      color: #fff;
+      border: none;
+    }
+    .btn-outline {
+      background: transparent;
+      color: #1a1a1a;
+      border: 1.5px solid #ccc;
+    }
+    .btn-new-session {
+      background: #1a1a1a;
+      color: #fff;
+      border: none;
+      font-size: 13px;
+      padding: 10px 16px;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <p class="page-label">Chosen Design</p>
+  <h1 class="page-name">Mockup 4</h1>
+
+  <div class="views">
+
+    <!-- View A: Timer running -->
+    <div class="view">
+      <p class="view-label">While the timer runs</p>
+      <div class="app">
+        <div class="painting-area">
+          <img class="blurred"
+               src="https://images.metmuseum.org/CRDImages/ep/original/DP-29324-001.jpg"
+               alt="Painting loading…">
+        </div>
+        <div class="bar">
+          <div class="timer-display">
+            <span class="timer-number">25:00</span>
+            <span class="pencil">✏</span>
+          </div>
+          <button class="btn btn-primary">Start</button>
+          <button class="btn btn-outline">Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- View B: Timer ended -->
+    <div class="view">
+      <p class="view-label">When the timer ends</p>
+      <div class="app">
+        <div class="painting-area">
+          <img src="https://images.metmuseum.org/CRDImages/ep/original/DP-29324-001.jpg"
+               alt="The Abduction of the Sabine Women">
+        </div>
+        <div class="bar">
+          <div class="reveal-info">
+            <span class="reveal-title">The Abduction of the Sabine Women</span>
+            <span class="reveal-meta">Nicolas Poussin &nbsp;·&nbsp; probably 1633–34</span>
+            <a class="reveal-link" href="#">View on the Met Museum →</a>
+          </div>
+          <button class="btn btn-new-session">Start another session</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
