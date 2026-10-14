@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mockup 2 – Dark Room</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #1a1a1a;
+      padding: 32px 16px 48px;
+    }
+
+    .page-label {
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 6px;
+    }
+    .page-name {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 700;
+      color: #f0f0f0;
+      margin-bottom: 40px;
+    }
+
+    .views {
+      display: flex;
+      gap: 28px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .view {
+      flex: 1;
+      min-width: 300px;
+      max-width: 440px;
+    }
+    .view-label {
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 14px;
+    }
+
+    /* ── App shell ── */
+    .app {
+      background: #0f0f0f;
+      border-radius: 14px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+      padding: 20px 20px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 14px;
+      position: relative;
+    }
+
+    /* Timer floats top-left inside the app */
+    .app-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .app-title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #444;
+    }
+    .timer {
+      font-size: 12px;
+      color: #E8735A;
+      letter-spacing: 0.06em;
+      font-variant-numeric: tabular-nums;
+      font-weight: 600;
+    }
+
+    /* ── Painting panel ── */
+    .panel {
+      width: 100%;
+      height: 260px;
+      background: #000;
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .panel img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .panel img.blurred {
+      filter: blur(20px);
+      transform: scale(1.08);
+    }
+
+    /* ── Buttons ── */
+    .buttons {
+      display: flex;
+      gap: 10px;
+    }
+    .btn {
+      flex: 1;
+      padding: 11px 0;
+      border-radius: 7px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: default;
+      background: transparent;
+    }
+    .btn-start {
+      border: 1.5px solid #E8735A;
+      color: #E8735A;
+    }
+    .btn-reset {
+      border: 1.5px solid #444;
+      color: #666;
+    }
+
+    /* ── Reveal box ── */
+    .reveal {
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      padding: 16px 18px;
+      background: #161616;
+    }
+    .reveal-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #E8735A;
+      margin-bottom: 4px;
+    }
+    .reveal-meta {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+    .reveal-link {
+      font-size: 12px;
+      color: #888;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <p class="page-label">Design Direction</p>
+  <h1 class="page-name">2 – Dark Room</h1>
+
+  <div class="views">
+
+    <div class="view">
+      <p class="view-label">While the timer runs</p>
+      <div class="app">
+        <div class="app-top">
+          <span class="app-title">Pomodoro Art</span>
+          <span class="timer">24:32</span>
+        </div>
+        <div class="panel">
+          <img class="blurred" src="https://images.metmuseum.org/CRDImages/ep/original/DP-29324-001.jpg" alt="Painting loading…">
+        </div>
+        <div class="buttons">
+          <button class="btn btn-start">Pause</button>
+          <button class="btn btn-reset">Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="view">
+      <p class="view-label">When the timer ends</p>
+      <div class="app">
+        <div class="app-top">
+          <span class="app-title">Pomodoro Art</span>
+          <span class="timer">00:00</span>
+        </div>
+        <div class="panel">
+          <img src="https://images.metmuseum.org/CRDImages/ep/original/DP-29324-001.jpg" alt="The Abduction of the Sabine Women">
+        </div>
+        <div class="buttons">
+          <button class="btn btn-start">Start</button>
+          <button class="btn btn-reset">Reset</button>
+        </div>
+        <div class="reveal">
+          <p class="reveal-title">The Abduction of the Sabine Women</p>
+          <p class="reveal-meta">Nicolas Poussin &nbsp;·&nbsp; probably 1633–34</p>
+          <a class="reveal-link" href="#">View on the Met Museum →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
